@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { ArrowDown, ArrowRight, ArrowUpDown, CarFront, Check, ChevronRight, CircleDot, Compass, Globe2, HeartHandshake, Home, Leaf, MapPin, Navigation, Plus, Search, ShieldCheck, UserRound, Users, Wallet } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpDown, CalendarDays, CarFront, Check, ChevronRight, CircleDot, Compass, Globe2, HeartHandshake, Home, Leaf, MapPin, Navigation, Plus, Search, ShieldCheck, UserRound, Users, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { cities, cityLabels, copy, type Locale } from "@/lib/carpool-content";
@@ -106,7 +106,7 @@ function Index() {
                 <label className="search-field"><MapPin size={20} className="field-icon" /><span><span className="field-label">{t.to}</span><select required aria-label={t.to} value={to} onChange={e => { setTo(e.target.value); setError(""); }}><option value="">{t.chooseCity}</option>{cities.map(c => <option key={c} value={c}>{city(c)}</option>)}</select></span></label>
               </div>
               <div className="date-seats">
-                <label className="search-field date-field"><span className="calendar-icon" aria-hidden="true">▦</span><span><span className="field-label">{t.date}</span><input id="departure-date" aria-label={t.date} type="date" required min={minDate} value={date} onChange={e => setDate(e.target.value)} /></span></label>
+                <label className="search-field date-field"><CalendarDays size={19} className="field-icon" /><span><span className="field-label">{t.date}</span><input id="departure-date" aria-label={t.date} type="date" required min={minDate} value={date} onChange={e => setDate(e.target.value)} /></span></label>
                 <label className="search-field seats-field"><Users size={19} className="field-icon" /><span><span className="field-label">{t.passengers}</span><select aria-label={t.passengers} value={seats} onChange={e => setSeats(e.target.value)}>{[1, 2, 3, 4, 5, 6, 7, 8].map(n => <option value={n} key={n}>{n} {n === 1 ? t.passenger : t.passengers.toLowerCase()}</option>)}</select></span></label>
               </div>
               <Button className="search-submit" type="submit"><Search size={19} />{mode === "find" ? t.search : t.review}<ArrowRight size={18} /></Button>
