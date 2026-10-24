@@ -1,0 +1,13 @@
+{
+  "source": "https://github.com/AleksVelkov/carpool",
+  "scope": "Frontend-only homepage redesign; no production migration requested",
+  "capabilities": [
+    {"capability":"Homepage frontend","source":"src/app/page.tsx","outcome":"redesign","status":"verified","next_action":"None; mobile-first guest homepage implemented with English/Macedonian selection."},
+    {"capability":"Schema and records","source":"Prisma/PostgreSQL; 24 models; no record exports","outcome":"unchanged_external","status":"out_of_scope","next_action":"None for frontend-only request."},
+    {"capability":"Authentication and authorization","source":"Original sessions, users, roles and ownership checks","outcome":"unchanged_external","status":"out_of_scope","next_action":"Preview must not claim working authentication."},
+    {"capability":"Bookings, rides, messaging, notifications, reviews and community","source":"Original application routes and services","outcome":"unchanged_external","status":"out_of_scope","next_action":"Preview must not invent live ride inventory or bookings."},
+    {"capability":"Email, push, public endpoints, schedules and secrets","source":"Nodemailer, web-push, internal dispatch and maintenance endpoints","outcome":"unchanged_external","status":"out_of_scope","next_action":"No backend changes requested."},
+    {"capability":"Uploaded bytes and external provider cutover","source":"No uploaded record or storage export supplied","outcome":"unchanged_external","status":"out_of_scope","next_action":"No production cutover requested."},
+    {"capability":"Verification","source":"Local preview","outcome":"frontend_verification","status":"verified","next_action":"None; search summary, swap, route selection, offering preview and locale switching passed; no overflow at 360, 390 or 1280px and no browser errors. Existing routing test passed. Production services remain out of scope."}
+  ]
+}
